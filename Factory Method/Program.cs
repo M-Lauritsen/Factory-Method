@@ -42,8 +42,6 @@ namespace Factory_Method
 
         abstract class Sandwich
         {
-            private List<Ingredient> _ingredients = new List<Ingredient>();
-
             public Sandwich()
             {
                 CreateIngredients();
@@ -52,10 +50,7 @@ namespace Factory_Method
             //Factory method
             public abstract void CreateIngredients();
 
-            public List<Ingredient> Ingredients
-            {
-                get { return _ingredients; }
-            }
+            public List<Ingredient> Ingredients { get; } = new List<Ingredient>();
         }
 
         class TurkeySandwich : Sandwich
